@@ -3,6 +3,7 @@ AC_PREREQ([2.63])
 AC_INIT([GRay2], m4_esyscmd([head -c8 .version]), [chanc@email.arizona.edu], [gray])
 AC_CONFIG_AUX_DIR([.build-aux])
 AC_CONFIG_MACRO_DIR([.build-m4])
+AC_CONFIG_SRCDIR([mod/gray.h])
 
 dnl Initialize automake
 AM_INIT_AUTOMAKE([1.11.1 -Wall -Werror gnu]) dnl cannot use gnits because of version number and the missing "THANKS" file
