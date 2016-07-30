@@ -16,6 +16,17 @@ LT_INIT([dlopen disable-static])
 dnl Check the required lux framework
 AX_REQUIRE_LUX
 
+dnl Make doxygen documentation a configure option (default disabled)
+AC_ARG_ENABLE([doc], [AC_HELP_STRING([--enable-doc],[generate documentation using doxygen @<:@default=no@:>@])])
+if test "x$enable_doc" = "xyes"; then
+	AC_CHECK_PROG([DOXYGEN], [doxygen], [yes])
+        if test "x$DOXYGEN" != "xyes"; then
+		AC_MSG_ERROR([`doxygen` not found while "--enable-doc" is set; GRay2 uses doxygen to generate its documentations; either install doxygen <http://www.doxygen.org> or disable document generation])
+	fi
+fi
+AM_CONDITIONAL([GRAY_DOC], [test "x$enable_doc" = "xyes"])
+
 dnl Output files
 AC_CONFIG_FILES(m4_esyscmd([find . -name 'Makefile.am' -type f | sed 's/\.\/\(.*\).am/\1/']))
+AC_CONFIG_FILES([doc/Doxyfile])
 AC_OUTPUT
