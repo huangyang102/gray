@@ -1,1 +1,4 @@
-GRay2: a general purpose geodesic integrator for Kerr spacetimes
+GRay2 is a massive parallel geodesic integrator for performing general
+relativistic ray tracing for accreting black holes.  It is based on
+the lux framework <http://luxsrc.org> and runs on a wide range of
+modern hardware/accelerators such as GPUs and Intel(R) Xeon Phi.
