@@ -1,0 +1,20 @@
+# Global settings
+*
+!*/
+
+# Source codes
+!*.[hc]
+!*.cl
+
+# Data files
+!*.?sv
+!*.?tab
+
+# Autotools etc
+!*.a[cm]
+!*.*in
+Makefile.in
+
+# Documentations
+!*.md
+!*.dox
